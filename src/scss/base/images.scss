@@ -1,0 +1,438 @@
+@import "images-variables";
+
+//sredi ovo - haos je
+.oicon{
+    width: 16px;
+    height: 16px;
+    display:block;
+    float:left;
+    &.black{
+        background-image: $img_sprite_black;
+        &.ic_reset{
+            background-position: -238px -23px;
+        }
+        &.ic_plus{
+            background-position: -407px -95px;
+        }
+        &.ic_ok {
+            background-position: -288px 0px;
+        }
+        &.ic_search {
+            background-position: -48px 0px;
+        }
+        &.ic_trash {
+            background-position: 15px 1px;
+        }
+    }
+    &.white{
+        background-image: $img_sprite_white;
+        &.ic_search{
+            background-position: -48px 0px;
+        }
+        &.ic_plus{
+            background-position: -407px -95px;
+        }
+        &.ic_minus{
+            background-position: -432px -95px;
+        }
+        &.ic_up{
+            background-position: 182px -119px;
+        }
+        &.ic_reset{
+            background-position: -238px -23px;
+        }
+        &.ic_chevron_down{
+            background-position: -311px -118px;
+        }
+        &.ic_chevron_up{
+            background-position: -286px -119px;
+        }
+        &.ic_chevron_left{
+            background-position: 38px -71px;
+        }
+    }
+}
+.oicon.magnifier{
+    display: block;
+    background-size: 100%;
+    &.white{
+        background-image: $img_magnifier-white-sm;    
+    }
+    width: 30px;
+    height: 30px;
+}
+.fheart{
+    display: block;
+    background-image: $img_fc_icons;
+
+    &.wh{
+        width: 40px;
+        height: 40px;
+        display: block;
+        margin: 0px;
+        background-position: 0 0;
+        &.blue{
+            background-image: $img_favorite_checked_white;
+        }
+        &.white{
+            background-image: $img_favorite_white;
+        }
+    }
+
+
+    &.large{
+        width: 24px;
+        height: 24px;
+        &.white{
+            background-position: -48px -205px;
+            &.hover{
+                &:hover{
+                    background-position: -148px -205px;
+                }
+            }
+        }
+        &.blue{ //blue because of javascript (stupid me, not js)
+                background-position: -248px -205px;
+                &.hover{
+                    &:hover{
+                        background-position: -348px -205px;
+                    }
+                }
+        }
+        &.white-outline{
+            background-position: -448px -205px;
+            &.hover{
+                &:hover{
+                    background-position: -548px -205px;
+                }
+            }
+        }
+    }
+    &.xlarge{
+        width: 32px;
+        height: 32px;
+        background-size: 100%;
+        &.white{
+            background-image: $img_heart_outline_red_40;
+            &.hover{
+                &:hover{
+                    background-image: $img_heart_outline_red_dark_40;
+                }
+            }
+        }
+        &.blue{ //blue because of javascript (stupid)
+                background-image: $img_heart_red_40;
+                &.hover{
+                    &:hover{
+                        background-image: $img_heart_red_dark_40;
+                    }
+                }
+        }
+    }
+    &.small{
+
+        width: 20px;
+        height: 20px;
+        &.white{
+            background-position: -47px -357px;
+            &.hover{
+                &:hover{
+                    background-position: -147px -357px;
+                }
+            }
+        }
+        &.blue{ //blue because of javascript (stupid me, not js)
+                background-position: -247px -357px;
+                &.hover{
+                    &:hover{
+                        background-position: -347px -357px;
+                    }
+                }
+        }
+        &.white-outline{
+            background-position: -447px -357px;
+            &.hover{
+                &:hover{
+                    background-position: -547px -357px;
+                }
+            }
+        }
+    }
+}
+
+.cbox{
+    background-image: $img_compare;
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin: 0px;
+    background-position: -2px -60px;
+    &:hover{
+        background-position: -29px -60px;
+    }
+    &.checked{
+        background-position: -2px -32px;
+        &:hover{
+            background-position: 26px -32px;
+        }
+    }
+    &.no-hover{
+        background-position: -2px -60px;
+        &:hover{
+            background-position: -2px -60px;
+        }
+        &.checked{
+            background-position: -2px -32px;
+            &:hover{
+                background-position: -2px -32px;
+            }
+        }
+
+    }
+
+    &.white{
+        width: 40px;
+        height: 40px;
+        display: block;
+        margin: 0px;
+        background-position: 0 0;
+        background-image: $img_compare_white;
+        &.checked{
+            background-image: $img_compare_checked_white;
+            background-position: 0 0;
+        }
+    }
+    &.white-outline{
+/*        -webkit-filter: ~"saturate(10) grayscale(100%)"; 
+        filter: ~"saturate(10) grayscale(100%)";*/
+        -webkit-filter: saturate(10) grayscale(100%);
+        filter: saturate(10) grayscale(100%);
+        background-position: -2px -60px;
+        &.no-hover{
+            &:hover{
+                background-position: -2px -60px;
+            }
+        }
+    }
+}
+
+.oicon-soc{
+    display: block;
+    background-image: $img_social_sprite_32;
+    width: 64px;
+    height: 64px;
+    &.fb{
+        background-position: -2px 0px;
+        background-color: $BLUE_FACEBOOK;
+    }
+    &.tw{
+        background-position: -62px 64px;
+        background-color: $BLUE_TWITTER;
+    }
+    &.gp{
+        background-position: -62px 0px;
+        background-color: $RED_GOOGLE;
+    }
+    &.in{
+        background-position: 0px 64px;
+        background-color: $BLUE_LINKEDIN;
+    }
+    &.viber{
+        background-position: -128px 2px;
+        background-color: $PURPLE_VIBER;
+    }
+    &.whatsapp{
+        background-position: -192px 0px;
+        background-color: $GREEN_WHATSAPP;
+    }
+    &.messenger{
+        background-position: -128px 64px;
+        background-color: $BLUE_MESSENGER;
+    }
+
+    &.sm{
+        background-size: 430%;
+        width: 36px;
+        height: 36px;
+        &.fb{
+            background-position: -1px 0px;
+        }
+        &.tw{
+            background-position: -39px 37px;
+        }
+        &.gp{
+            background-position: -39px 0px;
+        }
+        &.in{
+            background-position: 0px 36px;
+        }
+        &.viber{
+            background-position: -79px 0px;
+        }
+        &.whatsapp{
+            background-position: -117px -1px;
+        }
+        &.messenger{
+            background-position: -78px 37px;
+        }
+    }
+
+    &.fb, &.tw, &.gp, &.in, &.viber{
+        &:hover{
+            background-color: lighten($INDIGO_800, 10%);
+        }
+    }
+
+    &.fency{
+        &.fb{
+            &:hover{
+                background-color: lighten($BLUE_FACEBOOK, 10%);
+            }
+        }
+        &.tw{
+            &:hover{
+                background-color: lighten($BLUE_TWITTER, 10%);
+            }
+        }
+        &.gp{
+            &:hover{
+                background-color: lighten($RED_GOOGLE, 10%);
+            }
+        }
+        &.in{
+            &:hover{
+                background-color: lighten($BLUE_LINKEDIN, 10%);
+            }
+        }
+        &.viber{
+            &:hover{
+                background-color: lighten($PURPLE_VIBER, 10%);
+            }
+        }
+    }
+}
+.bodytype{
+    background-image: $img_bodytypes;
+    display:block;
+    height: 32px;
+    float:left;
+    margin: 0 7px 0 8px;
+    &.bt2{
+        width: 69px;
+        background-position: -17px 4px;
+    }
+    &.bt3{
+        width: 78px;
+        background-position: -11px -67px;
+    }
+    &.bt12{
+        width: 75px;
+        background-position: -14px -137px;
+    }
+    &.bt5{
+        width: 69px;
+        background-position: -16px -206px;
+    }
+    &.bt6{
+        width: 42px;
+        background-position: -29px -279px;
+    }
+    &.bt13{
+        width: 77px;
+        background-position: -12px -347px;
+    }
+    &.bt7{
+        width: 83px;
+        background-position: -9px -416px;
+    }
+    &.bt8{
+        width: 77px;
+        background-position: -12px -486px;
+    }
+    &.bt9{
+        width: 77px;
+        background-position: -12px -557px;
+    }
+    &.bt10{
+        width: 78px;
+        background-position: -12px -628px;
+    }
+    &.bt11{
+        width: 79px;
+        background-position: -10px -697px;
+    }
+}
+.oicon.camera_w30{
+    width: 23px;
+    background-image: $img_camera_w30;
+    background-size: 23px;
+    background-repeat: no-repeat;
+    display: block;
+    float:left;
+}
+
+/* Generated by http://css.spritegen.com CSS Sprite Generator */
+.flag-round { 
+    display: inline-block; 
+    background-image: $img_sprite_flags_round;
+    background-repeat: no-repeat;
+    overflow: hidden; 
+    text-indent: -9999px; 
+    text-align: left; 
+    width: 30px; 
+    height: 30px; 
+
+    &.flag-round-1 { background-position: -5px -0px; width: 30px; height: 30px; }
+    &.flag-round-10 { background-position: -40px -0px; width: 30px; height: 30px; }
+    &.flag-round-100 { background-position: -75px -0px; width: 30px; height: 30px; }
+    &.flag-round-102 { background-position: -110px -0px; width: 30px; height: 30px; }
+    &.flag-round-103 { background-position: -145px -0px; width: 30px; height: 30px; }
+    &.flag-round-104 { background-position: -180px -0px; width: 30px; height: 30px; }
+    &.flag-round-106 { background-position: -215px -0px; width: 30px; height: 30px; }
+    &.flag-round-107 { background-position: -5px -35px; width: 30px; height: 30px; }
+    &.flag-round-108 { background-position: -40px -35px; width: 30px; height: 30px; }
+    &.flag-round-110 { background-position: -75px -35px; width: 30px; height: 30px; }
+    &.flag-round-115 { background-position: -110px -35px; width: 30px; height: 30px; }
+    &.flag-round-116 { background-position: -145px -35px; width: 30px; height: 30px; }
+    &.flag-round-118 { background-position: -180px -35px; width: 30px; height: 30px; }
+    &.flag-round-121 { background-position: -215px -35px; width: 30px; height: 30px; }
+    &.flag-round-122 { background-position: -5px -70px; width: 30px; height: 30px; }
+    &.flag-round-123 { background-position: -40px -70px; width: 30px; height: 30px; }
+    &.flag-round-126 { background-position: -75px -70px; width: 30px; height: 30px; }
+    &.flag-round-128 { background-position: -110px -70px; width: 30px; height: 30px; }
+    &.flag-round-129 { background-position: -145px -70px; width: 30px; height: 30px; }
+    &.flag-round-130 { background-position: -180px -70px; width: 30px; height: 30px; }
+    &.flag-round-14 { background-position: -215px -70px; width: 30px; height: 30px; }
+    &.flag-round-146 { background-position: -5px -105px; width: 30px; height: 30px; }
+    &.flag-round-147 { background-position: -40px -105px; width: 30px; height: 30px; }
+    &.flag-round-149 { background-position: -75px -105px; width: 30px; height: 30px; }
+    &.flag-round-15 { background-position: -110px -105px; width: 30px; height: 30px; }
+    &.flag-round-161 { background-position: -145px -105px; width: 30px; height: 30px; }
+    &.flag-round-17 { background-position: -180px -105px; width: 30px; height: 30px; }
+    &.flag-round-19 { background-position: -215px -105px; width: 30px; height: 30px; }
+    &.flag-round-190 { background-position: -5px -140px; width: 30px; height: 30px; }
+    &.flag-round-2 { background-position: -40px -140px; width: 30px; height: 30px; }
+    &.flag-round-21 { background-position: -75px -140px; width: 30px; height: 30px; }
+    &.flag-round-23 { background-position: -110px -140px; width: 30px; height: 30px; }
+    &.flag-round-24 { background-position: -145px -140px; width: 30px; height: 30px; }
+    &.flag-round-26 { background-position: -180px -140px; width: 30px; height: 30px; }
+    &.flag-round-28 { background-position: -215px -140px; width: 30px; height: 30px; }
+    &.flag-round-29 { background-position: -5px -175px; width: 30px; height: 30px; }
+    &.flag-round-3 { background-position: -40px -175px; width: 30px; height: 30px; }
+    &.flag-round-32 { background-position: -75px -175px; width: 30px; height: 30px; }
+    &.flag-round-33 { background-position: -110px -175px; width: 30px; height: 30px; }
+    &.flag-round-4 { background-position: -145px -175px; width: 30px; height: 30px; }
+    &.flag-round-51 { background-position: -180px -175px; width: 30px; height: 30px; }
+    &.flag-round-57 { background-position: -215px -175px; width: 30px; height: 30px; }
+    &.flag-round-6 { background-position: -5px -210px; width: 30px; height: 30px; }
+    &.flag-round-7 { background-position: -40px -210px; width: 30px; height: 30px; }
+    &.flag-round-73 { background-position: -75px -210px; width: 30px; height: 30px; }
+    &.flag-round-75 { background-position: -110px -210px; width: 30px; height: 30px; }
+    &.flag-round-76 { background-position: -145px -210px; width: 30px; height: 30px; }
+    &.flag-round-81 { background-position: -180px -210px; width: 30px; height: 30px; }
+    &.flag-round-83 { background-position: -215px -210px; width: 30px; height: 30px; }
+    &.flag-round-84 { background-position: -5px -245px; width: 30px; height: 30px; }
+    &.flag-round-95 { background-position: -40px -245px; width: 30px; height: 30px; }
+    &.flag-round-97 { background-position: -75px -245px; width: 30px; height: 30px; }
+    &.flag-round-99 { background-position: -110px -245px; width: 30px; height: 30px; }
+}

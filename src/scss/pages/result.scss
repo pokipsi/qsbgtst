@@ -1,0 +1,103 @@
+@import "../base/palette";
+@import "../main";
+@import "../partials/header/header";
+@import "../partials/qs/qs";
+@import '../partials/car-cards/car-card-1';
+@import '../partials/car-cards/car-card-2';
+@import '../partials/car-cards/car-card-3';
+@import '../partials/car-cards/car-card-4';
+@import '../features/o-slider';
+@import '../partials/deal';
+@import "../partials/pagination";
+@import "../partials/filters/type1";
+@import "../partials/sorters/type1";
+@import "../features/custom-user-messaging-and-input/modal";
+
+section {
+
+    display: flex;
+
+    .left-column {
+        flex-basis: 356px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        @include media-breakpoint-between(lg, lg) {
+            flex-basis: 300px;
+        }
+    }
+    
+    .right-column {
+        width: 100%;
+        padding-left: 16px;
+        overflow: hidden;
+    }
+
+    @include media-breakpoint-down(md) { 
+
+        flex-direction: column;
+
+        .left-column, .right-column {
+            flex-basis: 100%;
+            padding-left: 0;
+        }
+
+    }
+
+    h1 {
+        font-size: 24px;
+        font-weight: $font-weight-light;
+        color: $grey_900;
+        margin: 16px 8px 0px;
+        @include media-breakpoint-down(md) {
+            margin: 16px 0 0 0;
+        }
+    }
+    h2 {
+        font-size: 16px;
+        font-weight: $font-weight-light;
+        color: $grey_700;
+        margin: 0px 8px 0 2px;
+        @include media-breakpoint-down(md) {
+            margin: 0;
+        }
+    }   
+}
+.clouds {
+    padding: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    a {
+        background-color: $grey_050;
+        border: 1px solid $grey_200;
+        color: $grey_700;
+        padding: 8px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        span {
+            color: $red_500;
+            margin-right: 4px;
+        }
+        &:hover {
+            background-color: $grey_100;
+            span {
+                color: $red_600;
+            }
+        }
+    }
+}
+
+h2.results-info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    span {
+        transform: scale(.54);
+    }
+    @include media-breakpoint-down(md) {
+        margin: 0;
+        span {
+            margin-left: -5px;
+        }
+    }
+}
+

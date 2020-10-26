@@ -1,0 +1,37 @@
+select {
+    -webkit-appearance: inherit;
+    appearance: inherit;
+}
+
+.select-wrapper{
+    position: relative;
+    label{
+        display: none;
+        position: absolute;
+        font-size: 10px;
+        border: 1px solid #ddd;
+        padding: 0px 7px;
+        left: 0;
+        top: -10px;
+        background: white; 
+    }
+    &::after{
+        font-family: 'icomoon';
+        content: "\e91c";
+        font-size: 1.2em;
+        // transform: scaleY(.5);
+        transform-origin: 0 0;
+        position: absolute;
+        right: 8px;
+        top: 10px;
+        color: $grey_800;
+        pointer-events: none;
+    }
+    &.sw-indigo {
+        select.form-control {
+            background-color: $indigo_600;
+            color: white;
+            border-color: $indigo_700;
+        }
+    }
+}

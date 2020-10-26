@@ -1,0 +1,57 @@
+$bgcolor: white;
+$bgcolor_active: $blue_600;
+$bgcolor_hover: $grey_200;
+$textcolor: $blue_600;
+$textcolor_active: white;
+$textcolor_hover: $blue_600;
+
+.pagination {
+    margin-top: 8px;
+    margin-bottom: 0px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    ul {
+        display: flex;
+        li{
+            display: inline;
+            a{
+                font-size: 14px; 
+                text-decoration: none;
+                display: block; 
+                padding: 4px 8px; 
+                background: $bgcolor;
+                margin-right: 4px; 
+                color: $textcolor;
+                text-align: center;
+                &:hover{
+                    text-decoration:none; 
+                    background: $bgcolor_hover;
+                    color: $textcolor_hover;
+                }
+                &.active{
+                    text-decoration:none; 
+                    background: $bgcolor_active;
+                    color: $textcolor_active; 
+                    cursor:text;
+                }
+            }
+        }
+    }
+    .next{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .previous{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .next, .previous{
+        a{
+            min-width: 95px;
+        }
+    }
+}

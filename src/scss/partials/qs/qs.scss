@@ -1,0 +1,229 @@
+@import './nouislider';
+@import './collection-view';
+@import './full-screen-selector-view';
+@import './saved-searches';
+
+$screen-xs-min: 768px;
+$screen-sm-min: 992px;
+$screen-md-min: 1024px;
+$screen-lg-min: 1200px;
+$screen-xs-max: $screen-sm-min - 1;
+$screen-sm-max: $screen-md-min - 1;
+$screen-md-max: $screen-lg-min - 1;
+
+.qs-wrapper{
+
+    .qs-form{
+
+        $btn-color: $orange_500;
+
+        //style
+        .btn-search {
+            color: white;
+            background-color: $btn-color;
+            border-color: $btn-color;
+            width: 100%;
+            &:hover{
+                background-color: darken($btn-color, 5%);
+            }
+            i {
+                position: absolute;
+                top: 14px;
+                right: 20px;
+            }
+        }
+
+        .btn-saved-searches {
+            position: relative;
+            border: 1px solid $grey_300;
+            justify-content: space-between;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            color: $grey_700;
+            i {
+                color: $grey_700;
+            }
+            .badge{
+                position: absolute;
+                @media (max-width: $screen-sm-max){
+                    right: 15px;
+                    top: 9px;
+                    font-size: 20px;
+                }
+                @media (min-width: $screen-md-min){
+                    right: 10px;
+                    top: 6px;    
+                    font-size: 15px;
+                }
+                border-radius: 50%;
+                background-color: $green_600;
+                color: white;
+                display: flex;
+                width: 30px;
+                height: 30px;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                &.badge-fade-in{
+                    opacity: 1;
+                    transform: scale(1);
+                    animation: fadein 0.7s ease-in-out;
+                    @keyframes fadein {
+                        0%, 40% { 
+                            opacity: 0; 
+                            transform: scale(1);
+                        }
+                        50%  { 
+                            opacity: 1;
+                            transform: scale(1.5);
+                        }
+                        80%, 100%  { 
+                            opacity: 1;
+                            transform: scale(1);
+                        }
+                    }
+                }
+                &.badge-move-up{
+                    animation: moveup 0.35s ease-out;
+                    transform: translate(0, -75px);
+                    opacity: 0;
+                    @keyframes moveup {
+                        from { 
+                            opacity: 1;
+                            transform: translate(0);
+                        }
+                        to {
+                            opacity: 0;
+                            transform: translate(0, -75px);
+                        }
+                    }
+                }
+            }
+        }
+
+        .btn-save-search, .btn-search {
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-search.fixed {
+            box-shadow: 0px 0px 8px fade-out($color: $grey_700, $amount: 0.3);
+            position: fixed;
+            bottom: 8px;
+            left: 10px;
+            width: calc(100% - 20px);
+        }
+
+        // .qs-zipcode, .qs-radius-wrapper {
+        //     display: none;
+        // }
+
+        input[type=text].form-control {
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+
+        .btn-reset {
+            width: 48px;
+            border: 1px solid $grey_200;
+            font-size: 18px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lock{
+            position: fixed;
+            height: 100vh;
+            width: 100%;
+            @media(min-width: $screen-md-min){
+                position: absolute;
+                height: 100%;
+            }
+            left: 0;
+            top: 0;
+            z-index: 1000;
+            background-color: transparentize($color: white, $amount: .6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .lds-roller { 
+                transform: scale(.75);
+                div:after {
+                    background-color: $blue_500;
+                }
+            }
+        }
+    }
+    button {
+        i {
+            display: inline-block;
+        }
+    }
+    .range-wrapper{
+        .range-preview{
+            display: none;
+            position: absolute;
+            width: 100%;
+            top: 0px;
+            left: 0;
+            text-align: center;
+            .rsp{
+                display: inline-block;
+                padding: 4px 8px;
+                font-size: 14px;
+                background-color: fade-out($indigo_500, 0.5);
+                color: white;
+                border-radius: 2px;
+            }
+        }
+    
+        .range-slider-holder{
+            padding: 0;
+        }
+        .range-max, .range-min{
+            padding: 4px 0;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        .range-max{
+            float: right;
+        }
+        .range-min{
+            float: left;
+        }
+        .noUi-connect{
+            background-color: $grey_100;
+            box-shadow: none;
+        }
+        .noUi-horizontal {
+            height: 8px;
+            width: calc(100% - 24px);
+            left: 12px;
+            .noUi-handle{
+                width: 24px;
+                height: 24px;
+                
+                top: -9px;
+                border-radius: 50%;
+                background-color: $grey_300;
+                box-shadow: none;
+                border: none;
+                &::after, &::before {
+                    content: none;
+                }
+                cursor: pointer;
+                &.noUi-handle-lower {
+                    left: -12px;
+                }
+                &.noUi-handle-upper {
+                    left: -12px;
+                }
+            }
+        }
+        
+    }
+}

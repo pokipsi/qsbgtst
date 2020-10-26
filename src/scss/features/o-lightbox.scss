@@ -1,0 +1,214 @@
+$screen-xs-min: 768px;
+$screen-sm-min: 992px;
+$screen-md-min: 1024px;
+$screen-lg-min: 1200px;
+$screen-xs-max: $screen-sm-min - 1;
+$screen-sm-max: $screen-md-min - 1;
+$screen-md-max: $screen-lg-min - 1;
+
+$image-width-xl: 800px;
+$image-height-xl: $image-width-xl * 3 / 4;
+
+$image-width-lg: 600px;
+$image-height-lg: $image-width-lg * 3 / 4;
+
+$image-width-md: 400px;
+$image-height-md: $image-width-md * 3 / 4;
+
+
+.olb-backdrop {
+    position: fixed;
+    z-index: 10100;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: fade-out(black, .3);
+    display: none;
+    
+    &.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .olb-header {
+        padding: 0 16px;
+        position: relative;
+        .olb-close {
+            position: absolute;
+            top: 14px;
+            right: 16px;
+            color: $grey_400;
+            cursor: pointer;
+            font-size: 20px;
+            &:hover{
+                color: $grey_700;
+            }
+        }
+    }
+    .olb-wrapper {
+        width: 1200px;
+        height: 90%;
+        overflow: auto;
+        padding: 8px;
+        @media (min-width: $screen-lg-min){
+            width: 1200px;
+        }
+        @media (min-width: $screen-md-min) and (max-width: $screen-md-max){
+            width: 1000px;
+        }
+        @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max){
+            width: 800px;
+        }
+        background-color: white;
+        border-radius: 4px;
+        .olb-content {
+            display: flex;
+            .olb-images-wrapper {
+                width: 800px;
+                @media (min-width: $screen-lg-min){
+                    width: $image-width-xl;
+                }
+                @media (min-width: $screen-md-min) and (max-width: $screen-md-max){
+                    width: $image-width-lg;
+                }
+                @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max){
+                    width: $image-width-md;
+                }
+                .olb-image {
+                    width: 800px;
+                    height: 600px;
+                    @media (min-width: $screen-lg-min){
+                        width: $image-width-xl;
+                        height: $image-height-xl;
+                    }
+                    @media (min-width: $screen-md-min) and (max-width: $screen-md-max){
+                        width: $image-width-lg;
+                        height: $image-height-lg;
+                    }
+                    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max){
+                        width: $image-width-md;
+                        height: $image-height-md;
+                    }
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    margin-bottom: 12px;
+                    background-color: $grey_100;
+                    position: relative;
+                    .olb-image-scroll-left, .olb-image-scroll-right {
+                        position: absolute;
+                        width: 50%;
+                        height: 100%;
+                        top: 0;
+                        display: flex;
+                        align-items: center;
+                        font-size: 100px;
+                        color: $orange_300;
+                        cursor: pointer;
+                        &::after {
+                            font-family: 'icomoon';
+                            opacity: 0.5;
+                        }
+                        &:hover{
+                            color: $orange_700;
+                            &::after {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    .olb-image-scroll-left {
+                        justify-content: flex-start;
+                        left: 0;
+                        &::after {
+                            content: "\e91d";
+                        }
+                    }
+                    .olb-image-scroll-right {
+                        justify-content: flex-end;
+                        right: 0;
+                        &::after {
+                            content:   "\e91e";
+                        }
+                    }
+                }
+                .olb-images {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    position: relative;
+                    $scroller-width: 32px;
+                    padding: 0 $scroller-width;
+
+                    overflow: hidden;
+                    .olb-scroller {
+                        position: absolute;
+                        top: 0;
+                        width: $scroller-width;
+                        height: 100%;
+                        background-color: $grey_200;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        font-size: 36px;
+                        color: $orange_500;
+                        z-index: 1001;
+                        &::after {
+                            font-family: 'icomoon';
+                        }
+                    }
+                    .olbs-left {
+                        left: 0;
+                        &::after {
+                            content: "\e91d";
+                        }
+                    }
+                    .olbs-right {
+                        right: 0;
+                        &::after {
+                            content:   "\e91e";
+                        }
+                    }
+                    .olb-scroll-content {
+                        display: flex;
+                        flex-wrap: nowrap;
+                        position: relative;
+                        z-index: 1000;
+                        left: 0;
+                    }
+                    .img-wrapper {
+                        flex-grow: 0;
+                        flex-shrink: 0;
+                        width: 147px;
+                        height: 110px;
+                        position: relative;
+                        border: 5px solid transparent;
+                        &.active {
+                            border-color: $orange_500;
+                        }
+                        img { 
+                            max-height: 100%;
+                            max-width: 100%;
+                            width: auto;
+                            height: auto;
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
+                        }    
+                    }
+                }
+            }
+            .olb-info {
+                display: flex;
+                flex-direction: column;
+                padding: 0 16px;
+                width: 100%;
+            }
+        }
+        
+    }
+}

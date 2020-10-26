@@ -1,0 +1,69 @@
+.fullpage-dialog {
+    position: fixed;
+    z-index: 1001;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    display: none;
+    
+    &.active {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .fpd-header {
+        background: $indigo_600;
+        color: white;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px;
+        .title {
+            font-size: 24px;
+        }
+        .fpd-main-close, .fpd-inner-close, .fpd-main-reset {
+            font-size: 24px;
+            line-height: 1;
+            display: flex;
+        }
+    }
+    .fpd-content {
+        height: 100%;
+        overflow: auto;
+        ul {
+            li {
+                padding: 16px 16px;
+                border-bottom: 1px solid $grey_200;
+                font-size: 24px;
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+
+    .fpd-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: fade-out($black, .3);
+        padding: 0 32px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    &.inner {
+        position: relative;
+        height: auto;
+        max-height: 100%;
+        flex-grow: 0;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+    }
+}

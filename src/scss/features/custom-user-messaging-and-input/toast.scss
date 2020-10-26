@@ -1,0 +1,64 @@
+@import "../../base/mixins.scss";
+
+.o-toast-holder{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    z-index: 100000;
+    @media (max-width: $screen-sm-max){
+        align-items: flex-end;
+    }
+    @media (min-width: $screen-md-min){
+        align-items: center;
+    }
+    .o-toast{
+        @media (max-width: $screen-sm-max){
+            width: 100%;
+            font-size: 20px;
+        }
+        @media (min-width: $screen-md-min){
+            width: 400px;
+            font-size: 16px;
+            @include drop-shadow();
+        }
+        padding: 20px;
+        background-color: $BLUE_600;
+        border: 1px solid $BLUE_700;
+        color: white;
+        &.o-toast-action{
+            opacity: 0;
+            transform: scale(1);
+            animation: toast-fadein 3s ease-in-out;
+            @keyframes toast-fadein {
+                0% { 
+                    opacity: 0; 
+                    transform: scale(1);
+                }
+                5% {
+                    opacity: 1; 
+                    transform: scale(1.1);
+                }
+                10% {
+                    transform: scale(1);
+                }
+                70%  {
+                    transform: scale(1);
+                }
+                80%{
+                    transform: scale(1);
+                }
+                90% {
+                    transform: scale(1.1);
+                    opacity: 1;
+                }
+                100%  { 
+                    opacity: 0;
+                    transform: scale(0);
+                }
+            }
+        }
+    }
+}

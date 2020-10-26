@@ -1,0 +1,21 @@
+@import "palette";
+
+@mixin scrollbarStyle($sb-thumb-bg: $indigo_400, $sb-bg: white, $sb-track-bg: white, $sb-button-bg: white, $sb-track-piece-bg: white){
+    ::-webkit-scrollbar{
+        background: $sb-bg;
+    }
+    ::-webkit-scrollbar-track{
+        background: $sb-track-bg;
+    }
+    ::-webkit-scrollbar-button{
+        height:0;
+        background: $sb-button-bg;
+    }
+    ::-webkit-scrollbar-track-piece{
+        background: $sb-track-piece-bg;
+    }
+    ::-webkit-scrollbar-thumb{
+        background: $sb-thumb-bg;
+        border-radius: 2px;
+    }
+}

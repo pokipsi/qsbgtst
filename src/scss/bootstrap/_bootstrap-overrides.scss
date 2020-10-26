@@ -1,0 +1,36 @@
+@import '../base/palette';
+
+$grid-gutter-width: 10px !default;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px) !default;
+
+$container-max-widths: (
+    lg: 892px,
+    xl: 1180px) !default;
+
+    /*
+
+    1280 + 48 = 1328
+
+    1920 1278 + gutter-width
+
+
+
+    */
+
+// //colors
+// $theme-colors: (
+//   "primary": $blue_500,
+//   "blue": $blue_500,
+//   "secondary": $blue_050,
+//   "lightblue": $blue_050
+// );
+
+
+// //border color
+// $input-border-color: $grey_200;

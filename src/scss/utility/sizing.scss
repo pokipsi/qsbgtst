@@ -1,0 +1,57 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import '../bootstrap/bootstrap-overrides';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins/breakpoints';
+
+@function breakpoint-prefix($name, $breakpoints: $grid-breakpoints) {
+    @return if(breakpoint-min($name, $breakpoints)==null, "", "#{$name}\\:");
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $prefix: breakpoint-prefix($breakpoint, $grid-breakpoints);
+
+        .#{$prefix}w-auto{
+            width: auto !important;
+        }
+        .#{$prefix}h-auto{
+            height: auto !important;
+        }
+
+        $multiplicator-r: 5;
+        $multiplicator-a: 4;
+
+        @for $i from 1 through 20 {
+    
+            $m: $i * $multiplicator-r;    
+
+            .#{$prefix}w-p#{$m}{
+                width: $m*1% !important;
+            }
+            
+        }
+
+        .#{$prefix}h-p100{
+            height: 100% !important;
+        }
+
+        @for $i from 0 through 24 {
+    
+            $x: $i * $multiplicator-a;
+        
+            .#{$prefix}w-#{$x}{
+                width: #{$x}px !important;
+            }
+            
+            .#{$prefix}h-#{$x}{
+                height: #{$x}px !important;
+            }
+        
+            .#{$prefix}s-#{$x}{
+                width: #{$x}px !important;
+                height: #{$x}px !important;
+            }
+        
+        }
+    }
+}

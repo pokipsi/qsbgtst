@@ -1,0 +1,76 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 29, 2020, 2:41:25 PM
+    Author     : adj
+*/
+$screen-xs-min: 768px;
+$screen-sm-min: 992px;
+$screen-md-min: 1024px;
+$screen-lg-min: 1200px;
+$screen-xs-max: $screen-sm-min - 1;
+$screen-sm-max: $screen-md-min - 1;
+$screen-md-max: $screen-lg-min - 1;
+
+.o-modal-backdrop{
+    position: fixed;
+    z-index: 10000;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: fade-out(#000, .15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    animation: modal-fadein 0.5s;
+    @keyframes modal-fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+    
+    .o-modal{
+        width: 400px;
+        @media (max-width: $screen-xs-max){
+            width: 300px;
+        }
+        &.o-type-alert, &.o-type-confirm {
+            width: 300px;
+            .o-controls .o-buttons{
+                padding: 16px;
+            }
+        }
+        background-color: $grey_100;
+        border: 1px solid $grey_200;
+        font-size: 16px;
+        border-radius: 4px;
+        .o-controls{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            .o-header{
+                background: $indigo_700;
+                width: 100%;
+                padding: 16px;
+                color: white;
+                border-radius: 4px 4px 0 0;
+            }
+            .o-content{
+                padding: 16px;
+                width: 100%;
+            }
+            .o-buttons{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                padding: 0px 16px 16px 16px;
+            }
+        }
+    }
+}

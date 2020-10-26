@@ -1,0 +1,25 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import '../bootstrap/bootstrap-overrides';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins/breakpoints';
+
+@function breakpoint-prefix($name, $breakpoints: $grid-breakpoints) {
+    @return if(breakpoint-min($name, $breakpoints)==null, "", "#{$name}\\:");
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $prefix: breakpoint-prefix($breakpoint, $grid-breakpoints);
+
+        .#{$prefix}-rotate-0{
+            transform: rotate(0deg);
+        }
+        .#{$prefix}-rotate-90{
+            transform: rotate(90deg);
+        }
+        .#{$prefix}-rotate-315{
+            transform: rotate(315deg);
+        }
+        
+    }
+}

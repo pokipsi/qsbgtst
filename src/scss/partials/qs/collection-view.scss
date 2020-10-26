@@ -1,0 +1,76 @@
+@import '../../base/images-variables';
+
+.collection-view {
+    display: flex;
+    flex-wrap: wrap;
+    .cv-item-wrapper {
+        width: 33.33333%;
+        padding: 8px;
+        .cv-item{
+            height: 100px;
+            width: 100%;
+            background-color: white;
+            border: 1px solid $grey_200;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            &.selected {
+                background-color: $grey_200;
+                .cv-primary {
+                    color: $grey_900;
+                }
+                .cv-secondary {
+                    color: $grey_700;
+                }
+            }
+            .cv-img{
+                width: 100px;
+                height: 40px;
+                background-image: $img_bt_sprite;
+                &.bt-img-1{
+                    background-position: 0px -553px;
+                }
+                &.bt-img-2{
+                    background-position: 0px 0px;
+                }
+                &.bt-img-3{
+                    background-position: 0px -52px;
+                }
+                &.bt-img-5{
+                    background-position: 0px -100px;
+                }
+                &.bt-img-6{
+                    background-position: 0px -150px;
+                }
+                &.bt-img-7{
+                    background-position: 0px -200px;
+                }
+                &.bt-img-8{
+                    background-position: 0px -250px;
+                }
+                &.bt-img-9{
+                    background-position: 0px -304px;
+                }
+                &.bt-img-10{
+                    background-position: 0px -352px;
+                }
+                &.bt-img-11{
+                    background-position: 0px -400px;
+                }
+                &.bt-img-12{
+                    background-position: 0px -456px;
+                }
+                &.bt-img-13{
+                    background-position: 0px -500px;
+                }
+            }
+            .cv-primary {
+                color: $grey_800;
+            }
+            .cv-secondary {
+                color: $grey_400;
+            }
+        }
+    }
+}

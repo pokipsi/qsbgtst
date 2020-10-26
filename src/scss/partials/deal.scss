@@ -1,0 +1,47 @@
+.deal-wrapper {
+    margin-right: 16px;
+    .label {
+        text-align: center;
+        font-size: 14px;
+        font-style: italic;
+    }
+    .deal {
+        display: flex;
+        span {
+            width: 24px;
+            height: 12px;
+            background-color: $grey_200;
+            border-radius: 6px;
+            margin: 2px;
+            @include media-breakpoint-down(md) { 
+                width: 16px;
+                height: 8px;
+            }
+        }
+        &.type-5 {
+            span {
+                background-color: $green_600;
+            }    
+        }
+        &.type-4 {
+            :nth-child(1), :nth-child(2), :nth-child(3), :nth-child(4) {
+                background-color: $light-green_400;
+            }    
+        }
+        &.type-3 {
+            :nth-child(1), :nth-child(2), :nth-child(3) {
+                background-color: $yellow_500;
+            }    
+        }
+        &.type-2 {
+            :nth-child(1), :nth-child(2) {
+                background-color: $amber_500;
+            }    
+        }
+        &.type-1 {
+            :nth-child(1) {
+                background-color: $red_500;
+            }    
+        }
+    }   
+}

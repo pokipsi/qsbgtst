@@ -1,0 +1,68 @@
+.car-card-5 {
+    $padding: 4px;
+    $image-width: 280px;
+    width: $image-width;
+    display: flex;
+    flex-direction: row;
+    width: $image-width + 2*$padding;
+    height: 100%;
+    padding: 32px $padding 0 $padding;
+    border: 1px solid $grey_200;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    &:hover {
+        box-shadow: 0 0 8px 2px rgba(100,100,100,.4);
+    }
+    h2 {
+        position: absolute;
+        top: 0;
+        left: 8px;
+        padding: 8px 0 4px 0;
+        font-weight: $font-weight-normal;
+        font-size: 14px;
+        color: $blue_500;
+    }
+    .image-wrapper {
+        width: 160px;
+        height: 104px;
+        position: relative;
+        background-color: $grey_100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        flex-grow: 0;
+        flex-shrink: 0;
+        img{
+            height: 100%;
+            position: relative;
+            z-index: 1001;
+        }
+        .loading{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+
+            transform: scale(.5);
+        }
+    }
+    .data {
+        &>div {
+            display: flex;
+            flex-direction: column;
+        }
+        font-size: 12px;
+        color: $grey_700;
+        padding: 4px;
+        min-height: 40px;
+    }
+}

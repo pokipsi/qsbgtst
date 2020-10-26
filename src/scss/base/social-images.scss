@@ -1,0 +1,106 @@
+@import './images-variables';
+
+.oicon-soc{
+    display: block;
+    background-image: $img_social_sprite_32;
+    width: 64px;
+    height: 64px;
+    &.fb{
+        background-position: -2px 0px;
+        background-color: $blue_facebook;
+    }
+    &.tw{
+        background-position: -62px 64px;
+        background-color: $blue_twitter;
+    }
+    &.gp{
+        background-position: -62px 0px;
+        background-color: $red_google;
+    }
+    &.in{
+        background-position: 0px 64px;
+        background-color: $blue_linkedin;
+    }
+    &.viber{
+        background-position: -128px 2px;
+        background-color: $purple_viber;
+        &:hover {
+            background-color: lighten($purple_viber, 10%);
+        }
+    }
+    &.whatsapp{
+        background-position: -192px 0px;
+        background-color: $green_whatsapp;
+        &:hover {
+            background-color: lighten($green_whatsapp, 10%);
+        }
+    }
+    &.messenger{
+        background-position: -128px 64px;
+        background-color: $blue_messenger;
+        &:hover {
+            background-color: lighten($blue_messenger, 10%);
+        }
+    }
+
+    &.sm{
+        background-size: 430%;
+        width: 36px;
+        height: 36px;
+        &.fb{
+            background-position: -1px 0px;
+        }
+        &.tw{
+            background-position: -39px 37px;
+        }
+        &.gp{
+            background-position: -39px 0px;
+        }
+        &.in{
+            background-position: 0px 36px;
+        }
+        &.viber{
+            background-position: -79px 0px;
+        }
+        &.whatsapp{
+            background-position: -117px -1px;
+        }
+        &.messenger{
+            background-position: -78px 37px;
+        }
+    }
+
+    &.fb, &.tw, &.gp, &.in, &.viber{
+        &:hover{
+            background-color: lighten($indigo_800, 10%);
+        }
+    }
+
+    &.fency{
+        &.fb{
+            &:hover{
+                background-color: lighten($blue_facebook, 10%);
+            }
+        }
+        &.tw{
+            &:hover{
+                background-color: lighten($blue_twitter, 10%);
+            }
+        }
+        &.gp{
+            &:hover{
+                background-color: lighten($red_google, 10%);
+            }
+        }
+        &.in{
+            &:hover{
+                background-color: lighten($blue_linkedin, 10%);
+            }
+        }
+        &.viber{
+            &:hover{
+                background-color: lighten($purple_viber, 10%);
+            }
+        }
+    }
+}

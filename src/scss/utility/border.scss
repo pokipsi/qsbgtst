@@ -1,0 +1,70 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import '../bootstrap/bootstrap-overrides';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins/breakpoints';
+
+.border-blue{
+    border: 1px solid $blue_500 !important;
+}
+
+.border-green{
+    border: 1px solid $green_500 !important;
+}
+
+.border-grey{
+    border: 1px solid $grey_400 !important;
+}
+
+.border-grey-200{
+    border: 1px solid $grey_200 !important;
+}
+
+.border-top-grey-050{
+    border-top: 1px solid $grey_050 !important;
+}
+
+.border-bottom-grey-050{
+    border-bottom: 1px solid $grey_050 !important;
+}
+
+.border-top-grey-100{
+    border-top: 1px solid $grey_100 !important;
+}
+
+.border-bottom-grey-100{
+    border-bottom: 1px solid $grey_100 !important;
+}
+
+.border-top-grey-200{
+    border-top: 1px solid $grey_200 !important;
+}
+.border-bottom-grey-200{
+    border-bottom: 1px solid $grey_200 !important;
+}
+
+
+
+@function breakpoint-prefix($name, $breakpoints: $grid-breakpoints) {
+    @return if(breakpoint-min($name, $breakpoints)==null, "", "#{$name}\\:");
+}
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $prefix: breakpoint-prefix($breakpoint, $grid-breakpoints);
+
+        .#{$prefix}border-rounded{
+            border-radius: 4px;
+        }
+
+        .#{$prefix}border-circle{
+            border-radius: 50%;
+        }
+
+        .#{$prefix}border-grey-200{
+            border: 1px solid $grey_200 !important;
+        }
+        .#{$prefix}border-blue-500{
+            border: 1px solid $blue_500 !important;
+        }
+        
+    }
+}

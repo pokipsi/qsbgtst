@@ -1,0 +1,45 @@
+footer {
+    position: relative;
+    padding: 16px;
+    background-color: $indigo_700;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    nav {
+        &.info {
+            display: flex;
+            justify-content: center;
+            a {
+                color: white;
+                margin: 0 8px;
+                font-size: 14px;
+                border-bottom: 4px solid $indigo_600;
+                &:hover {
+                    text-shadow: 0px 0px 4px $blue_200;
+                }
+            }
+        }
+        &.social {
+            display: flex;
+            justify-content: center;
+            font-size: 32px;
+            a {
+                color: white;
+                margin: 0 8px;
+                &:hover {
+                    text-shadow: 0px 0px 4px $blue_200;
+                }
+            }
+        }
+    }
+    .copyright {
+        color: $grey_400;
+        font-size: 14px;
+        span {
+            padding: 4px;
+            border-bottom: 1px solid $indigo_800;
+        }
+    }
+}

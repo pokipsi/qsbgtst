@@ -1,0 +1,19 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import '../bootstrap/bootstrap-overrides';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins/breakpoints';
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        .flex-order#{$infix}-0 {
+            order: 0;
+        }
+
+        .flex-order#{$infix}-1 {
+            order: 1;
+        }
+        
+    }
+}

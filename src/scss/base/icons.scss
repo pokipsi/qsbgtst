@@ -1,0 +1,145 @@
+//IMPORTANT: icomoon.io, selected font groups zondicons, brands, icomoon
+
+@import './font-variables';
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url($fonts-dir + 'icomoon.eot?kb4g11');
+    src:  url($fonts-dir + 'icomoon.eot?kb4g11#iefix') format('embedded-opentype'),
+      url($fonts-dir + 'icomoon.ttf?kb4g11') format('truetype'),
+      url($fonts-dir + 'icomoon.woff?kb4g11') format('woff'),
+      url($fonts-dir + 'icomoon.svg?kb4g11#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+    
+  .icon-arrow-thin-down:before {
+    content: "\e907";
+  }
+  .icon-arrow-thin-left:before {
+    content: "\e904";
+  }
+  .icon-arrow-thin-right:before {
+    content: "\e905";
+  }
+  .icon-arrow-thin-up:before {
+    content: "\e906";
+  }
+  .icon-camera:before {
+    content: "\e900";
+  }
+  .icon-checkmark:before {
+    content: "\e908";
+  }
+  .icon-cheveron-down:before {
+    content: "\e91c";
+  }
+  .icon-cheveron-left:before {
+    content: "\e91d";
+  }
+  .icon-cheveron-right:before {
+    content: "\e91e";
+  }
+  .icon-cheveron-up:before {
+    content: "\e91f";
+  }
+  .icon-close:before {
+    content: "\e909";
+  }
+  .icon-cog:before {
+    content: "\e901";
+  }
+  .icon-copy:before {
+    content: "\e90a";
+  }
+  .icon-duplicate:before {
+    content: "\e90b";
+  }
+  .icon-envelope:before {
+    content: "\e902";
+  }
+  .icon-globe:before {
+    content: "\e903";
+  }
+  .icon-heart:before {
+    content: "\e90c";
+  }
+  .icon-information-outline:before {
+    content: "\e917";
+  }
+  .icon-information-solid:before {
+    content: "\e918";
+  }
+  .icon-key:before {
+    content: "\e919";
+  }
+  .icon-location:before {
+    content: "\e91a";
+  }
+  .icon-phone:before {
+    content: "\e90d";
+  }
+  .icon-photo:before {
+    content: "\e90e";
+  }
+  .icon-refresh:before {
+    content: "\e90f";
+  }
+  .icon-reload:before {
+    content: "\e910";
+  }
+  .icon-search:before {
+    content: "\e911";
+  }
+  .icon-share-alt:before {
+    content: "\e912";
+  }
+  .icon-star-full:before {
+    content: "\e913";
+  }
+  .icon-time:before {
+    content: "\e914";
+  }
+  .icon-trash:before {
+    content: "\e915";
+  }
+  .icon-tuning:before {
+    content: "\e916";
+  }
+  .icon-wrench:before {
+    content: "\e91b";
+  }
+  .icon-tab:before {
+    transform: rotate(90deg);
+    display: block;
+    content: "\ea45";
+  }
+  .icon-sort-amount-asc:before {
+    content: "\ea4c";
+  }
+  .icon-sort-amount-desc:before {
+    content: "\ea4d";
+  }
+  .icon-checkbox-checked:before {
+    content: "\ea52";
+  }
+  .icon-checkbox-unchecked:before {
+    content: "\ea53";
+  }
+

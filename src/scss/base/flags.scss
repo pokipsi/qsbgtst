@@ -1,0 +1,67 @@
+@import './images-variables';
+
+.flag-round { 
+    display: inline-block; 
+    background-image: $img_sprite_flags_round_full;
+    background-repeat: no-repeat;
+    overflow: hidden; 
+    text-indent: -9999px; 
+    text-align: left; 
+    width: 30px; 
+    height: 30px; 
+
+    &.flag-round-1 { background-position: -5px -0px; width: 30px; height: 30px; }
+    &.flag-round-10 { background-position: -40px -0px; width: 30px; height: 30px; }
+    &.flag-round-100 { background-position: -75px -0px; width: 30px; height: 30px; }
+    &.flag-round-102 { background-position: -110px -0px; width: 30px; height: 30px; }
+    &.flag-round-103 { background-position: -145px -0px; width: 30px; height: 30px; }
+    &.flag-round-104 { background-position: -180px -0px; width: 30px; height: 30px; }
+    &.flag-round-106 { background-position: -215px -0px; width: 30px; height: 30px; }
+    &.flag-round-107 { background-position: -5px -35px; width: 30px; height: 30px; }
+    &.flag-round-108 { background-position: -40px -35px; width: 30px; height: 30px; }
+    &.flag-round-110 { background-position: -75px -35px; width: 30px; height: 30px; }
+    &.flag-round-115 { background-position: -110px -35px; width: 30px; height: 30px; }
+    &.flag-round-116 { background-position: -145px -35px; width: 30px; height: 30px; }
+    &.flag-round-118 { background-position: -180px -35px; width: 30px; height: 30px; }
+    &.flag-round-121 { background-position: -215px -35px; width: 30px; height: 30px; }
+    &.flag-round-122 { background-position: -5px -70px; width: 30px; height: 30px; }
+    &.flag-round-123 { background-position: -40px -70px; width: 30px; height: 30px; }
+    &.flag-round-126 { background-position: -75px -70px; width: 30px; height: 30px; }
+    &.flag-round-128 { background-position: -110px -70px; width: 30px; height: 30px; }
+    &.flag-round-129 { background-position: -145px -70px; width: 30px; height: 30px; }
+    &.flag-round-130 { background-position: -180px -70px; width: 30px; height: 30px; }
+    &.flag-round-14 { background-position: -215px -70px; width: 30px; height: 30px; }
+    &.flag-round-146 { background-position: -5px -105px; width: 30px; height: 30px; }
+    &.flag-round-147 { background-position: -40px -105px; width: 30px; height: 30px; }
+    &.flag-round-149 { background-position: -75px -105px; width: 30px; height: 30px; }
+    &.flag-round-15 { background-position: -110px -105px; width: 30px; height: 30px; }
+    &.flag-round-161 { background-position: -145px -105px; width: 30px; height: 30px; }
+    &.flag-round-17 { background-position: -180px -105px; width: 30px; height: 30px; }
+    &.flag-round-19 { background-position: -215px -105px; width: 30px; height: 30px; }
+    &.flag-round-190 { background-position: -5px -140px; width: 30px; height: 30px; }
+    &.flag-round-2 { background-position: -40px -140px; width: 30px; height: 30px; }
+    &.flag-round-21 { background-position: -75px -140px; width: 30px; height: 30px; }
+    &.flag-round-23 { background-position: -110px -140px; width: 30px; height: 30px; }
+    &.flag-round-24 { background-position: -145px -140px; width: 30px; height: 30px; }
+    &.flag-round-26 { background-position: -180px -140px; width: 30px; height: 30px; }
+    &.flag-round-28 { background-position: -215px -140px; width: 30px; height: 30px; }
+    &.flag-round-29 { background-position: -5px -175px; width: 30px; height: 30px; }
+    &.flag-round-3 { background-position: -40px -175px; width: 30px; height: 30px; }
+    &.flag-round-32 { background-position: -75px -175px; width: 30px; height: 30px; }
+    &.flag-round-33 { background-position: -110px -175px; width: 30px; height: 30px; }
+    &.flag-round-4 { background-position: -145px -175px; width: 30px; height: 30px; }
+    &.flag-round-51 { background-position: -180px -175px; width: 30px; height: 30px; }
+    &.flag-round-57 { background-position: -215px -175px; width: 30px; height: 30px; }
+    &.flag-round-6 { background-position: -5px -210px; width: 30px; height: 30px; }
+    &.flag-round-7 { background-position: -40px -210px; width: 30px; height: 30px; }
+    &.flag-round-73 { background-position: -75px -210px; width: 30px; height: 30px; }
+    &.flag-round-75 { background-position: -110px -210px; width: 30px; height: 30px; }
+    &.flag-round-76 { background-position: -145px -210px; width: 30px; height: 30px; }
+    &.flag-round-81 { background-position: -180px -210px; width: 30px; height: 30px; }
+    &.flag-round-83 { background-position: -215px -210px; width: 30px; height: 30px; }
+    &.flag-round-84 { background-position: -5px -245px; width: 30px; height: 30px; }
+    &.flag-round-95 { background-position: -40px -245px; width: 30px; height: 30px; }
+    &.flag-round-97 { background-position: -75px -245px; width: 30px; height: 30px; }
+    &.flag-round-99 { background-position: -110px -245px; width: 30px; height: 30px; }
+    &.flag-round-1000 { background-position: -145px -245px; width: 30px; height: 30px; }
+}

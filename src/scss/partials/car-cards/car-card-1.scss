@@ -1,0 +1,528 @@
+//rezultati + outlet
+
+@import "node_modules/bootstrap/scss/functions";
+
+//MD >
+
+$car-height: 200px;
+$image-holder-height: $car-height * 0.85;
+$image-holder-width: $image-holder-height * 4/3;
+$bottom-info-height: $car-height - $image-holder-height;
+
+$car-loading-image-width: 60px;
+$car-loading-image-height: 60px;
+$car-loading-image-margin-left: ($image-holder-width - $car-loading-image-width)/2;
+$car-loading-image-margin-top: ($image-holder-height - $car-loading-image-height)/2;
+
+//SM - MD
+
+$car-height-sm: 235px;
+$image-holder-height-sm: $car-height-sm * 0.9;
+$image-holder-width-sm: $image-holder-height-sm * 4/3;
+$bottom-info-height-sm: $car-height-sm - $image-holder-height-sm;
+
+$car-loading-image-width-sm: 60px;
+$car-loading-image-height-sm: 60px;
+$car-loading-image-margin-left-sm: ($image-holder-width-sm - $car-loading-image-width-sm)/2;
+$car-loading-image-margin-top-sm: ($image-holder-height-sm - $car-loading-image-height-sm)/2;
+
+//XS - SM
+
+$car-height-xs: 195px;
+$image-holder-height-xs: $car-height-xs * 0.85;
+$image-holder-width-xs: $image-holder-height-xs * 4/3;
+$bottom-info-height-xs: $car-height-xs - $image-holder-height-xs;
+
+$car-loading-image-width-xs: 60px;
+$car-loading-image-height-xs: 60px;
+$car-loading-image-margin-left-xs: ($image-holder-width-xs - $car-loading-image-width-xs)/2;
+$car-loading-image-margin-top-xs: ($image-holder-height-xs - $car-loading-image-height-xs)/2;
+
+
+//0 - XSS
+
+$car-height-xss: 150px;
+$image-holder-height-xss: $car-height-xss * 0.85;
+$image-holder-width-xss: $image-holder-height-xss * 4/3;
+$bottom-info-height-xss: $car-height-xss - $image-holder-height-xss;
+
+$car-loading-image-width-xss: 60px;
+$car-loading-image-height-xss: 60px;
+$car-loading-image-margin-left-xss: ($image-holder-width-xss - $car-loading-image-width-xss)/2;
+$car-loading-image-margin-top-xss: ($image-holder-height-xss - $car-loading-image-height-xss)/2;
+
+
+$car-text-color: $grey_800;
+$car-text-color-light: $grey_500;
+
+$car-large-text-size: 22px;
+
+$link-text-color: $blue_500;
+
+
+.car-card-1 {
+    margin-bottom: 8px;
+    padding: 8px 8px 0 8px;
+    @include media-breakpoint-down(md) { 
+        padding: 0;
+    }
+    width: 100%;
+    border: 1px solid $grey_100;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    border-radius: 4px;
+
+    @include media-breakpoint-down(md) {
+        flex-direction: column;
+    }
+
+    &:hover {
+        background-color: $grey_050;
+        color: $car-text-color;
+        text-decoration: none;
+    }
+
+    .alpha {
+        position: relative;
+        z-index: 2;
+        flex-grow: 1;
+        flex-shrink: 0;
+        
+        @include media-breakpoint-down(xs) {
+            height: $car-height-xss + 10;
+            width: $image-holder-width-xss;
+        }
+        @include media-breakpoint-between(xs, xs) {
+            height: $car-height-xs;
+            width: $image-holder-width-xs;
+        }
+        @include media-breakpoint-between(sm, sm) {
+            height: $car-height-sm;
+            width: $image-holder-width-sm;
+        }
+        @include media-breakpoint-up(md) {
+            height: $car-height;
+            width: $image-holder-width;
+        }
+        @include media-breakpoint-between(lg, lg) { 
+            width: 180px;        
+        }
+        .image-holder{
+            position: relative;
+            width: 100%;
+            height: $image-holder-height;
+            @include media-breakpoint-down(xs) {
+                height: $image-holder-height-xss;
+            }
+            @include media-breakpoint-between(xs, xs) {
+                height: $image-holder-height-xs;
+            }
+            @include media-breakpoint-between(sm, sm) {
+                height: $image-holder-height-sm;
+            }
+            @include media-breakpoint-up(md) {
+                height: $image-holder-height;
+            }
+            background-color: $grey_200;
+            border: 1px solid $grey_300;
+            img {
+                max-height: 100%;
+                max-width: 100%;
+                width: auto;
+                height: auto;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                z-index: 1001;
+            }
+        }
+        .loading{
+            max-height: 100%;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: 1000;
+            
+            @include media-breakpoint-down(xs) {
+                top: 0 - $bottom-info-height-xss;
+            }
+            @include media-breakpoint-between(xs, xs) {
+                top: 0 - $bottom-info-height-xs;
+            }
+            @include media-breakpoint-between(sm, sm) {
+                top: 0 - $bottom-info-height-sm;
+            }
+            @include media-breakpoint-up(md) {
+                top: 0 - $bottom-info-height;
+            }
+            
+            .lds-roller {
+                transform: scale(.6);
+            }
+        }
+        .bottom-info {
+            position: relative;
+            z-index: 1001;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: $grey_400;
+            font-size: 22px;
+
+            .uc-holder {
+                display: flex;
+                align-items: center;
+                padding-top: 2px;
+                span {
+                    line-height: 1;
+                    &:hover {
+                        color: $grey_500;
+                    }
+                    &.active {
+                        color: $blue_500;
+                        &:hover {
+                            color: $blue_600;
+                        }
+                    }
+                }
+            }
+
+            .image-count{
+                display: flex;
+                align-items: center;
+                i{
+                    margin-right: 4px;
+                }
+                span {
+                    font-size: 16px;
+                    line-height: 1;
+                    margin-top: 3px;
+                }
+            }
+
+            @include media-breakpoint-down(xs) {
+                .image-count{
+                    margin-top: 0px;
+                }
+                height: $bottom-info-height-xss;
+            }
+            @include media-breakpoint-between(xs, xs) {
+                height: $bottom-info-height-xs;
+            }
+            @include media-breakpoint-between(sm, sm) {
+                height: $bottom-info-height-sm;
+                .image-count{
+                    margin-top: 4px;
+                }
+            }
+            @include media-breakpoint-up(md) {
+                height: $bottom-info-height;
+            }
+
+        }
+        .promote{
+            position: absolute;
+            color: $grey_200;
+            font-size: 12px;
+            background-color: fade-out($grey_900, 0.5);
+            padding: 2px 5px;
+            left: 1px;
+            top: 1px;
+            z-index: 10000;
+        }
+
+    }
+    .beta{
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        padding-left: 8px;
+
+        @include media-breakpoint-down(xs) {
+            min-height: $car-height-xss;
+        }
+        @include media-breakpoint-between(xs, xs) {
+            min-height: $car-height-xs;
+        }
+        @include media-breakpoint-between(sm, sm) {
+            min-height: $car-height-sm;
+        }
+        @include media-breakpoint-up(md) {
+            min-height: $car-height;
+        }
+        @include media-breakpoint-down(md) {
+            >h2 {
+                display: none;
+            }
+        }
+        h2{
+            color: $link-text-color;
+            margin: 0;
+            font-weight: $font-weight-normal;
+            font-size: $car-large-text-size;
+            line-height: $car-large-text-size + 6;
+            max-height: $car-large-text-size + 6;
+            overflow: hidden;
+            text-transform: uppercase;
+        }
+        .info{
+            display: flex;
+            flex-grow: 1;
+            
+            color: $car-text-color;
+            
+            .basic-info {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                
+                .description {
+                    color: $car-text-color-light;
+                    text-transform: uppercase;
+                    font-weight: $font-weight-light;
+                    max-height: 84px;
+                    @include media-breakpoint-between(lg, lg) { 
+                        max-height: 60px;
+                    }
+                    overflow: hidden;
+                }
+                .location {
+                    font-weight: $font-weight-light;
+                    strong {
+                        font-weight: $font-weight-normal;
+                        color: $grey_800;
+                    }
+                }
+                
+                .location, .mileage, .description{
+                    display: block;
+                    width: 100%;
+                    @include media-breakpoint-down(xs) {
+
+                    }
+                    @include media-breakpoint-between(xs, xs) {
+
+                    }
+                    @include media-breakpoint-between(sm, sm) {
+                        font-size: 16px;
+                    }
+                    @include media-breakpoint-up(md) {
+                        font-size: 14px;
+                    }
+                }
+                @include media-breakpoint-down(md) {
+                    .description, .location {
+                        display: none;
+                    }
+                }
+                .price{
+                    font-size: 16px;
+                    &.lg{
+                        font-size: 18px;
+                    }
+                }
+
+                .price-stat {
+                    display: flex;
+                    align-items: center;
+                    margin-top: auto;
+                    @include media-breakpoint-down(md) { 
+                        margin-top: 0;
+                        align-items: flex-start;
+                        flex-direction: column;
+                    }
+                    .percent {
+                        color: $green_500;
+                        text-transform: uppercase;
+                        @include media-breakpoint-down(md) { 
+                            font-size: 14px;
+                        }
+                        
+                    }
+                    @include media-breakpoint-between(lg, lg) { 
+                        flex-direction: column;
+                        .percent {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+            .price-info{
+                display: flex;
+                flex-direction: column;
+                margin-top: auto;
+                align-items: flex-end;
+
+                $price-info-width-xss: 0px;
+                $price-info-width-xs: 0px;
+                $price-info-width-sm: 200px;
+                $price-info-width-md: 200px;
+                $price-info-width-lg: 130px;
+                $price-info-width-xl: 200px;
+
+                flex-grow: 1;
+                flex-shrink: 0;
+
+                @include media-breakpoint-down(xs) {
+                    width: $price-info-width-xss;
+                    display: none;
+                }
+                @include media-breakpoint-between(xs, xs) {
+                    width: $price-info-width-xs;
+                    display: none;
+                }
+                @include media-breakpoint-between(sm, sm) {
+                    width: $price-info-width-sm;
+                }
+                @include media-breakpoint-between(lg, lg) { 
+                    width: $price-info-width-lg;
+                }
+                @include media-breakpoint-up(xl) {
+                    width: $price-info-width-xl;
+                }
+
+                >div {
+                    text-align: right;
+                    font-size: 20px;
+                    line-height: 1;
+                    transform: translate(8px, 0);
+                    @include media-breakpoint-down(md) {  
+                        transform: translate(0, 0);
+                    }
+                    .price{
+                        background-color: $light_blue_400;
+                        color: white;
+                        width: 100%;
+                        display: block;
+                        font-size: 1em;
+                        padding: 8px;
+                    }
+                    .other-price{
+                        color: $grey_500;
+                        font-size: .7em;
+                        padding: 4px;
+                        display: block;
+                        font-style: italic;
+                    }
+                }
+                
+                .you-save{
+                    width: 100%;
+                    text-align: right;
+                    position: absolute;
+                    right: 0;
+                    bottom: 3px;
+                    @include media-breakpoint-up(md) {
+                        width: 500px;
+                    }
+                }
+                .deal{
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+    .gama{
+        float:left;
+        width: 100%;
+        // background-color: $grey_100;
+        margin-bottom: 5px;
+
+        @include media-breakpoint-down(xs) {
+
+        }
+        @include media-breakpoint-between(xs, xs) {
+
+        }
+        @include media-breakpoint-between(sm, sm) {
+            display: none;
+        }
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+
+        .mob-heading{
+            margin: 0;
+            // background-color: $grey_100;
+            float: left;
+            width: 100%;
+            position: relative;
+            z-index: 1001;
+            font-weight: $font-weight-bold;
+
+            $mob-heading-text-size: 20px;
+
+            @include media-breakpoint-down(xs) {
+                font-size: $mob-heading-text-size;
+                line-height: $mob-heading-text-size + 4;
+                max-height: ($mob-heading-text-size + 8) * 2;
+                overflow: hidden;
+            }
+            @include media-breakpoint-between(xs, xs) {
+                font-size: $mob-heading-text-size;
+                line-height: $mob-heading-text-size + 4;
+                max-height: $mob-heading-text-size + 10;
+                overflow: hidden;
+            }
+            @include media-breakpoint-up(sm) {
+                display: none;
+            }
+
+            color: $link-text-color;
+            &:hover{
+                color: $link-text-color;    
+            }
+            padding: 5px 5px 0 5px;
+        }
+
+        .mob-location{
+            float: left;
+            width: 100%;
+            color: $grey_600;
+            font-size: 15px;
+            padding: 0 5px 5px 5px;
+            z-index: 1000000;
+            position: relative;
+            display: none;
+            @include media-breakpoint-down(sm) {
+                display: block;
+            }
+        }
+    }
+    // .mob.favhook{
+    //     position: absolute;
+    //     bottom: 5px;
+    //     right: 10px;
+    //     z-index: 500000;
+    // }
+    // .mob.comphook{
+    //     position: absolute;
+    //     bottom: 5px;
+    //     right: 60px;
+    //     z-index: 500000;
+    // }
+    .mobile-data {
+        display: none;
+        @include media-breakpoint-down(sm) {
+            display: block;
+        }
+    }
+}

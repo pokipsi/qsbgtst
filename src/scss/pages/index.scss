@@ -1,0 +1,24 @@
+@import "../base/palette";
+@import "../main";
+@import "../partials/header/header";
+@import "../partials/promo-android";
+@import "../partials/qs/qs";
+@import '../partials/car-cards/car-card-1';
+@import '../partials/car-cards/car-card-2';
+@import '../partials/car-cards/car-card-3';
+@import '../partials/deal';
+@import "../features/custom-user-messaging-and-input/modal";
+
+@import "node_modules/bootstrap/scss/functions";
+
+.cards-wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 64px 0;
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+}

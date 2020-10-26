@@ -1,0 +1,58 @@
+.sorters {
+    display: flex;
+    justify-content: space-evenly;
+    >div{
+        padding: 8px;
+        width: 100%;
+        .btn {
+            width: 100%;
+
+            color: $blue_500;
+            background-color: white;
+            border: 1px solid $blue_500;
+
+            &:hover{
+                color: white !important;
+                background-color: $blue_500;
+            }
+
+            &.s0 {
+                color: $red_500;
+                border-color: $red_500;
+
+                &:hover{
+                    background-color: $red_500;
+                }
+
+                &.reversed {
+                    color: $green_500;
+                    border-color: $green_500;
+
+                    &:hover{
+                        background-color: $green_500;
+                    }
+
+                }
+
+            }
+
+            &.s1 {
+                color: $green_500;
+                border-color: $green_500;
+
+                &:hover{
+                    background-color: $green_500;
+                }
+
+                &.reversed {
+                    color: $red_500;
+                    border-color: $red_500;
+
+                    &:hover{
+                        background-color: $red_500;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+@import '../../base/mixins';
+
+.filters-holder {
+    .filters {
+        @include scrollbarStyle($grey_300);
+        .filter-wrapper {
+            margin-bottom: 16px;
+            h3 {
+                display: flex;
+                align-items: center;
+                color: $blue_500;
+                border-left: 5px solid $blue_500;
+                background-color: $grey_050;
+                padding: 2px 8px;
+                cursor: pointer;
+                .caption {
+                    text-transform: uppercase;
+                    font-weight: $font-weight-light;
+                    font-size: 22px;
+                    width: 100%;
+                    display: block;
+                }
+                .icon-cheveron-down {
+                    font-size: 26px;
+                    transform: rotate(0deg);
+                    transition: ease-in transform .2s;
+                }
+                &.active {
+                    .icon-cheveron-down {
+                        transform: rotate(180deg);
+                        transition: ease-in transform .2s;
+                    }
+                }
+            }
+            .list-wrapper {
+                max-height: 178px;
+                overflow-y: scroll;
+                border-bottom: 1px solid $grey_100;
+                border-left: 5px solid $blue_500;
+                ul {
+                    width: 100%;
+                    padding: 4px 0;
+                    li {
+                        a{
+                            padding: 2px 8px;
+                            display: flex;
+                            // justify-content: space-between;
+                            .filter-count {
+                                color: $grey_400;
+                                margin-left: 8px;
+                            }
+                            &:hover{
+                                color: $blue_500;
+                                background-color: $grey_050;
+                            }
+                        }
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

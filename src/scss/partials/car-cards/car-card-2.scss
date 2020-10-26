@@ -1,0 +1,239 @@
+//rezultati + outlet
+
+@import "node_modules/bootstrap/scss/functions";
+
+//MD >
+
+$car-height: 140px;
+$image-holder-height: $car-height * 0.85;
+$image-holder-width: $image-holder-height * 4/3;
+
+$car-loading-image-width: 60px;
+$car-loading-image-height: 60px;
+$car-loading-image-margin-left: ($image-holder-width - $car-loading-image-width)/2;
+$car-loading-image-margin-top: ($image-holder-height - $car-loading-image-height)/2;
+
+//SM - MD
+
+$car-height-sm: 140px;
+$image-holder-height-sm: $car-height-sm * 0.9;
+$image-holder-width-sm: $image-holder-height-sm * 4/3;
+
+$car-loading-image-width-sm: 60px;
+$car-loading-image-height-sm: 60px;
+$car-loading-image-margin-left-sm: ($image-holder-width-sm - $car-loading-image-width-sm)/2;
+$car-loading-image-margin-top-sm: ($image-holder-height-sm - $car-loading-image-height-sm)/2;
+
+//XS - SM
+
+$car-height-xs: 120px;
+$image-holder-height-xs: $car-height-xs * 0.85;
+$image-holder-width-xs: $image-holder-height-xs * 4/3;
+
+$car-loading-image-width-xs: 60px;
+$car-loading-image-height-xs: 60px;
+$car-loading-image-margin-left-xs: ($image-holder-width-xs - $car-loading-image-width-xs)/2;
+$car-loading-image-margin-top-xs: ($image-holder-height-xs - $car-loading-image-height-xs)/2;
+
+
+//0 - XSS
+
+$car-height-xss: 100px;
+$image-holder-height-xss: $car-height-xss * 0.85;
+$image-holder-width-xss: $image-holder-height-xss * 4/3;
+
+$car-loading-image-width-xss: 60px;
+$car-loading-image-height-xss: 60px;
+$car-loading-image-margin-left-xss: ($image-holder-width-xss - $car-loading-image-width-xss)/2;
+$car-loading-image-margin-top-xss: ($image-holder-height-xss - $car-loading-image-height-xss)/2;
+
+
+$car-text-color: $grey_800;
+$car-text-color-light: $grey_500;
+
+$car-large-text-size: 22px;
+
+$link-text-color: $blue_500;
+
+
+.car-card-2 {
+    width: calc(100% / 6);
+    position: relative;
+    display: flex;
+    border-radius: 4px;
+    color: $grey_800;
+
+    @include media-breakpoint-down(sm) {
+        width: 50%;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+
+    @include media-breakpoint-down(md) {
+        flex-direction: column;
+    }
+
+    &:hover {
+        text-decoration: none;
+        // cursor: default;
+        color: $grey_800;
+    }
+
+    .alpha {
+        position: relative;
+        z-index: 2;
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: calc(100% - 8px);
+        padding: 0 4px;
+        margin-bottom: 8px;
+        
+        @include media-breakpoint-down(xs) {
+            height: $car-height-xss + 10;
+        }
+        @include media-breakpoint-between(xs, xs) {
+            height: $car-height-xs;
+        }
+        @include media-breakpoint-between(sm, sm) {
+            height: $car-height-sm;
+        }
+        @include media-breakpoint-up(md) {
+            height: $car-height;
+        }
+        .image-holder{
+            position: relative;
+            width: 100%;
+            height: $image-holder-height;
+            @include media-breakpoint-down(xs) {
+                height: $image-holder-height-xss;
+            }
+            @include media-breakpoint-between(xs, xs) {
+                height: $image-holder-height-xs;
+            }
+            @include media-breakpoint-between(sm, sm) {
+                height: $image-holder-height-sm;
+            }
+            @include media-breakpoint-up(md) {
+                height: $image-holder-height;
+            }
+            background-color: $grey_200;
+            img{
+                max-height: 100%;
+                max-width: 100%;
+                width: auto;
+                height: auto;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                z-index: 1001;
+            }
+        }
+        .loading{
+            max-height: 100%;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: 1000;
+            top: 0;
+            .lds-roller {
+                transform: scale(.6);
+            }
+        }
+        .bottom-info{
+            position: relative;
+            z-index: 1001;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: $grey_400;
+            font-size: 20px;
+            padding: 4px 0;
+            height: 28px;
+
+            .uc-holder {
+                display: flex;
+                align-items: center;
+                padding-top: 2px;
+                span {
+                    line-height: 1;
+                    &:hover {
+                        color: $grey_500;
+                    }
+                    &.active {
+                        color: $blue_500;
+                        &:hover {
+                            color: $blue_600;
+                        }
+                    }
+                }
+            }
+
+            .image-count{
+                display: flex;
+                align-items: center;
+                i{
+                    margin-right: 4px;
+                }
+                span {
+                    font-size: 16px;
+                    line-height: 1;
+                    margin-top: 3px;
+                }
+            }
+
+        }
+
+    }
+    .beta{
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid $grey_200;
+        > div {
+            height: 48px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid $grey_200;
+            padding: 4px 8px;
+            font-size: 14px;
+            &.active {
+                background-color: $yellow_050;
+            }
+        }
+    }
+    .placeholder {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        div {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: $grey_200;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            font-weight: $font-weight-bold;
+        }
+    }
+}

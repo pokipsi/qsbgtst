@@ -1,0 +1,74 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import '../../bootstrap/bootstrap-overrides';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins/breakpoints';
+
+$map: ( 
+    "light": $grey-400, 
+    "primary": $grey-700
+);
+
+@function breakpoint-prefix($name, $breakpoints: $grid-breakpoints) {
+    @return if(breakpoint-min($name, $breakpoints)==null, "", "#{$name}\\:");
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $prefix: breakpoint-prefix($breakpoint, $grid-breakpoints);
+        
+        @each $name,
+        $color in $map {
+            .#{$prefix}tc-#{$name} {
+                color: $color !important;
+            }
+        }
+    }
+}
+
+
+
+// .text-grey-100{
+//     color: $grey_100 !important;
+// }
+
+.tc-grey-200{
+    color: $grey_200 !important;
+}
+
+.tc-grey-300{
+    color: $grey_300 !important;
+}
+
+.tc-grey-400{
+    color: $grey_400 !important;
+}
+
+.tc-grey-500{
+    color: $grey_500 !important;
+}
+.tc-grey-600{
+    color: $grey_600 !important;
+}
+.tc-grey-700{
+    color: $grey_700 !important;
+}
+
+.tc-blue-500{
+    color: $blue_500 !important;
+}
+
+.tc-green{
+    color: $green_500 !important;
+}
+
+.tc-orange{
+    color: $orange_400 !important;
+}
+
+.tc-red{
+    color: $red_500 !important;
+}
+
+.tc-white{
+    color: white !important;
+}

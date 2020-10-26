@@ -1,0 +1,64 @@
+$color1: #0000FF;
+$color2: #808000;
+$color3: #800080;
+$color4: #FF00FF;
+$color5: #800000;
+
+$screen-xs-min: 768px;
+$screen-sm-min: 992px;
+$screen-md-min: 1024px;
+$screen-lg-min: 1200px;
+$screen-xs-max: $screen-sm-min - 1;
+$screen-sm-max: $screen-md-min - 1;
+$screen-md-max: $screen-lg-min - 1;
+
+@mixin tab($times){
+    margin-left: $times*25px;
+}
+.syntax{
+    div{
+        display: inline;
+    }
+    .c1{
+        color: $color1;
+    }
+
+    .c2{
+        color: $color2;
+    }
+
+    .c3{
+        color: $color3;
+    }
+
+    .c4{
+        color: $color4;
+    }
+    
+    .c5{
+        color: $color5;
+    }
+    
+    .tab1{
+        @include tab(1);
+    }
+
+    .tab2{
+        @include tab(2);
+    }
+
+    .tab3{
+        @include tab(3);
+    }
+}
+
+.syntax {
+    border: 1px solid #ccc;
+    padding: 16px;
+    font-size: 14px;
+    margin: 0 0 10px 0;
+    word-break: break-word;
+    @media (max-width: $screen-xs-max){ 
+        margin-left: -16px;
+    }
+}

@@ -1,0 +1,32 @@
+// @import "../bootstrap/bootstrap/variables";
+// @import "../base/palette";
+// @import "../parts/popup";
+// @import "../parts/main";
+// @import "../parts/car/car_type_4"; //fh desktop, tablet
+// @import "../parts/car/car_type_6"; //similar see also details desktop
+// @import "../parts/ooyyo-list";
+// @import "../parts/adsense";
+// @import "../parts/ooyyo-chart";
+// @import "../parts/detail-data";
+// @import "../base/mixins";
+// @import "../parts/compare";
+
+@import "../base/palette";
+@import "../main";
+@import "../partials/header/header";
+@import '../partials/car-cards/car-card-1';
+@import '../partials/car-cards/car-card-2';
+@import '../partials/deal';
+@import "../features/custom-user-messaging-and-input/modal";
+
+h1 {
+    font-size: 24px;
+    font-weight: $font-weight-light;
+    color: $grey_900;
+    margin: 16px 0 0;
+}
+
+.images-holder img{
+    width: 100%;
+    margin: 0 0 5px 0;
+}

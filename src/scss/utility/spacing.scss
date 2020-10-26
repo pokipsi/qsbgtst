@@ -1,0 +1,118 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import '../bootstrap/bootstrap-overrides';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins/breakpoints';
+
+@function breakpoint-prefix($name, $breakpoints: $grid-breakpoints) {
+    @return if(breakpoint-min($name, $breakpoints)==null, "", "#{$name}\\:");
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $prefix: breakpoint-prefix($breakpoint, $grid-breakpoints);
+
+        .#{$prefix}mr-auto{
+            margin-right: auto !important;
+        }
+        .#{$prefix}ml-auto{
+            margin-left: auto !important;
+        }
+
+        .#{$prefix}pr-auto{
+            padding-right: auto !important;
+        }
+        .#{$prefix}pl-auto{
+            padding-left: auto !important;
+        }
+        
+        $multiplicator: 4;
+
+        @for $i from 0 through 24 {
+    
+            $m: $i * $multiplicator;
+        
+            .#{$prefix}mt-#{$m}{
+                margin-top: #{$m}px !important;
+            }
+            .#{$prefix}mb-#{$m}{
+                margin-bottom: #{$m}px !important;
+            }
+            .#{$prefix}mr-#{$m}{
+                margin-right: #{$m}px !important;
+            }
+            .#{$prefix}ml-#{$m}{
+                margin-left: #{$m}px !important;
+            }
+            .#{$prefix}mx-#{$m}{
+                margin-left: #{$m}px !important;
+                margin-right: #{$m}px !important;
+            }
+            .#{$prefix}my-#{$m}{
+                margin-top: #{$m}px !important;
+                margin-bottom: #{$m}px !important;
+            }
+            .#{$prefix}m-#{$m}{
+                margin: #{$m}px !important;
+            }
+            
+        
+            .#{$prefix}pt-#{$m}{
+                padding-top: #{$m}px !important;
+            }
+            .#{$prefix}pb-#{$m}{
+                padding-bottom: #{$m}px !important;
+            }
+            .#{$prefix}pr-#{$m}{
+                padding-right: #{$m}px !important;
+            }
+            .#{$prefix}pl-#{$m}{
+                padding-left: #{$m}px !important;
+            }
+            .#{$prefix}px-#{$m}{
+                padding-left: #{$m}px !important;
+                padding-right: #{$m}px !important;
+            }
+            .#{$prefix}py-#{$m}{
+                padding-top: #{$m}px !important;
+                padding-bottom: #{$m}px !important;
+            }
+            .#{$prefix}p-#{$m}{
+                padding: #{$m}px !important;
+            }
+        
+        }
+
+        $multiplicator-n: 4;
+
+        @for $i from 0 through 12 {
+    
+            $m: $i * $multiplicator-n;
+        
+            .#{$prefix}mt-n#{$m}{
+                margin-top: -#{$m}px !important;
+            }
+            .#{$prefix}mb-n#{$m}{
+                margin-bottom: -#{$m}px !important;
+            }
+            .#{$prefix}mr-n#{$m}{
+                margin-right: -#{$m}px !important;
+            }
+            .#{$prefix}ml-n#{$m}{
+                margin-left: -#{$m}px !important;
+            }
+            .#{$prefix}mx-n#{$m}{
+                margin-left: -#{$m}px !important;
+                margin-right: -#{$m}px !important;
+            }
+        
+        }
+
+        @for $m from 0 through 4 {
+        
+            .#{$prefix}mt-#{$m} {
+                margin-top: #{$m}px !important;
+            }
+
+        }
+    }
+}
