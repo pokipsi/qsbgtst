@@ -24,7 +24,7 @@ export default class QS {
         if(paramMap.idMake) {
             return `../data/${paramMap.idMake}.json`;
         }
-        return '/data/default.json';
+        return '../data/default.json';
         // return '/ooyyo-services/resources/quicksearch/qselements?json=' + encodeURIComponent(JSON.stringify(paramMap));
     }
     get(paramMap) {
