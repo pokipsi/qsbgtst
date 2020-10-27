@@ -39,6 +39,12 @@ export default class OSelect{
         this.setItemsListeners();
         
         this.cursor = -1;
+
+        this.inputActive = false;
+
+        $("body").on("click", () => {
+            this.inputActive = false;
+        });
     }
     setData(data){
         this.data = data;
@@ -89,66 +95,69 @@ export default class OSelect{
         }
     }
     setInputListeners() {
-        this.$input.focus(e => {
-            this.$input.val('');
-            this.$placeholder.text(this.selectedItem[this.accessors.name]);
-            this.$ul.slideDown(200);
+        this.$input.click(e => {
+            if(! this.inputActive) {
+                this.inputActive = true;
+                this.$input.val('');
+                this.$placeholder.text(this.selectedItem[this.accessors.name]);
+                this.$ul.slideDown(200);
+            }
             e.stopPropagation();
         });
-        this.$input.blur(e => {
-            this.$placeholder.text('');
-            setTimeout(() => {
-                this.setInput();
-                this.$ul.slideUp(100);
-                this.updateList(this.data);
-                e.stopPropagation();    
-            }, 100);
-        });
-        this.$input.keyup(e => {
-            let value = e.target.value;
-            if(e.which == keys.ESC){
-                this.cursor = -1;
-                this.$input.blur();
-            }
-            if(e.which == keys.ENTER){
-                this.cursor = -1;
-                let li = this.$ul.find('li.selected');
-                if(li){
-                    let id = $(li).data('id') || this.filtered[0][this.accessors.id];
-                    this.setSelectedItem(id);
-                    this.$input.blur();
-                    setTimeout(() => {
-                        this.updateList(this.data);
-                        this.onSelected(id);
-                    }, 300);
-                }
-            }
-            else if(e.which == keys.ARROW_UP || e.which == keys.ARROW_DOWN){
-                this.setCursor(e.which);
-                this.$input.val(value);
-            }else{
+        // this.$input.blur(e => {
+        //     this.$placeholder.text('');
+        //     setTimeout(() => {
+        //         this.setInput();
+        //         this.$ul.slideUp(100);
+        //         this.updateList(this.data);
+        //         e.stopPropagation();    
+        //     }, 100);
+        // });
+        // this.$input.keyup(e => {
+        //     let value = e.target.value;
+        //     if(e.which == keys.ESC){
+        //         this.cursor = -1;
+        //         this.$input.blur();
+        //     }
+        //     if(e.which == keys.ENTER){
+        //         this.cursor = -1;
+        //         let li = this.$ul.find('li.selected');
+        //         if(li){
+        //             let id = $(li).data('id') || this.filtered[0][this.accessors.id];
+        //             this.setSelectedItem(id);
+        //             this.$input.blur();
+        //             setTimeout(() => {
+        //                 this.updateList(this.data);
+        //                 this.onSelected(id);
+        //             }, 300);
+        //         }
+        //     }
+        //     else if(e.which == keys.ARROW_UP || e.which == keys.ARROW_DOWN){
+        //         this.setCursor(e.which);
+        //         this.$input.val(value);
+        //     }else{
 
-                if(value.trim() != ''){
-                    this.cursor = 0;
-                    let filtered = this.data.filter(c => c[this.accessors.name] && c[this.accessors.name].toLowerCase().startsWith(value.toLowerCase()));
-                    this.filtered = filtered.length > 0 ? filtered : this.filtered;
-                    this.updateList([...filtered]);
-                    this.setSelectedClass(this.filtered[0]);
-                    let temp = this.filtered.length > 0 ? this.filtered[0] : this.selectedItem;
-                    this.$placeholder.text(temp[this.accessors.name]);
-                    this.$input.val(temp[this.accessors.name].substring(0, value.length));
-                    this.setInput(temp, true);
-                }
-                else{
-                    this.cursor = -1;
-                    this.updateList(this.data);
-                    this.$placeholder.text(this.selectedItem[this.accessors.name]);
-                    this.setInput(this.selectedItem, true);
-                }
+        //         if(value.trim() != ''){
+        //             this.cursor = 0;
+        //             let filtered = this.data.filter(c => c[this.accessors.name] && c[this.accessors.name].toLowerCase().startsWith(value.toLowerCase()));
+        //             this.filtered = filtered.length > 0 ? filtered : this.filtered;
+        //             this.updateList([...filtered]);
+        //             this.setSelectedClass(this.filtered[0]);
+        //             let temp = this.filtered.length > 0 ? this.filtered[0] : this.selectedItem;
+        //             this.$placeholder.text(temp[this.accessors.name]);
+        //             this.$input.val(temp[this.accessors.name].substring(0, value.length));
+        //             this.setInput(temp, true);
+        //         }
+        //         else{
+        //             this.cursor = -1;
+        //             this.updateList(this.data);
+        //             this.$placeholder.text(this.selectedItem[this.accessors.name]);
+        //             this.setInput(this.selectedItem, true);
+        //         }
 
-            }
+        //     }
             
-        });
+        // });
     }
     setInput(item = this.selectedItem, dontSetVal = false){
         if(!dontSetVal){
