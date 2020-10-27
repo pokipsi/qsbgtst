@@ -21,10 +21,8 @@ export default class QS {
         this.idTimeout = 0;
     }
     endpoint(paramMap) {
-        if(paramMap.idMake) {
-            return `../data/${paramMap.idMake}.json`;
-        }
-        return '../data/default.json';
+        let source = (paramMap.idMake && paramMap.idMake != -1) ? paramMap.idMake : "default";
+        return `/qsbgtst/data/${source}.json`;
         // return '/ooyyo-services/resources/quicksearch/qselements?json=' + encodeURIComponent(JSON.stringify(paramMap));
     }
     get(paramMap) {
