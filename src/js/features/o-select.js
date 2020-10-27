@@ -44,6 +44,7 @@ export default class OSelect{
         $("body").click(e => {
             if(this.inputActive) {
                 this.$placeholder.text('');
+                this.inputActive = false;
                 setTimeout(() => {
                     this.setInput();
                     this.$ul.slideUp(100);
